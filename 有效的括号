@@ -12,7 +12,7 @@ class Solution:
             if char in list1:
                 stack.append(char)
             else:
-                if not stack or list1[stack.pop()] != char:
+                if not stack or list1[stack.pop()] != char:#pop移除最后一个元素并且返回值
                     return False
         return not stack
         
