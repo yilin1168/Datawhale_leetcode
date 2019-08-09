@@ -1,0 +1,19 @@
+class Solution(object):
+    def mergeKLists(self, lists):
+        a = []
+        for l in lists:
+            h = l
+            while h:
+                a.append(h.val)
+                h=h.next
+        a.sort()
+        n = len(a)
+        if n == 0:
+            return None
+        
+        h = ListNode(a[0])
+        ans = h
+        for i in range(1,n):
+            h.next = ListNode(a[i])
+            h = h.next
+        return ans
